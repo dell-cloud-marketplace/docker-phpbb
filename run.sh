@@ -12,4 +12,15 @@ else
     echo "=> Using an existing volume of MySQL"
 fi
 
+APPLICATION_HOME="/var/www/html"
+
+if [[ ! -d $APPLICATON_HOME ]]; then
+   echo "=> Copying application files"
+   cp -r phpBB3/* $APPLICATION_HOME
+   cd $APPLICATION_HOME
+   for files in config.php cache files store images/avatars/upload/; \
+   do chmod 777 $files; done
+fi
+
+
 exec supervisord -n
