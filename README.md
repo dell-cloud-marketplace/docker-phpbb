@@ -1,5 +1,5 @@
 # docker-phpbb
-[phpBB](https://www.phpbb.com/) is an open-source internet forum software.
+[phpBB](https://www.phpbb.com/) is open-source internet forum software.
 
 ## Components
 The stack comprises the following components (some are obtained through [dell/lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base)):
@@ -12,36 +12,30 @@ MySQL      | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/do
 Apache     | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Web server
 PHP        | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Scripting language
 
-
 ## Usage
+
+### Start the Container
 Start the container, as follows:
 
     docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
     --name phpbb dell/phpbb
 
-MySQL password is auto-generated, if password is not specified. MySQL password is ouputted to the conatiner logs and can be acquired by the below command:
+You need to check the container logs, in order to get the MySQL password:
 
-    docker logs container_id
+    docker logs phpbb
 
-You will see an output like the following:
+You should see an output like the following:
 
     ====================================================================
     You can now connect to this MySQL Server using:
 
-      mysql -uadmin -p47nnf4FweaKu -h<host> -P<port>
+      mysql -uadmin -pca1w7dUhnIgI -h<host> -P<port>
 
     Please remember to change the above password as soon as possible!
     MySQL user 'root' has no password but only allows local connections
     =====================================================================
 
-In this case, **47nnf4FweaKu** is the password allocated to the admin user. Make a secure note of this value. You can use it later, to connect to MySQL (e.g. to backup data):
-
-You can then connect to MySQL:
-
-    mysql -uadmin -p47nnf4FweaKu
-
-Note that the root user does not allow connections from outside the container. Please use this admin user instead.
-
+In this case, **ca1w7dUhnIgI** is the password allocated to the admin user. Copy the value to the clipboard.
 
 ### Complete the installation
 
