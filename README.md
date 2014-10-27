@@ -7,7 +7,7 @@ The stack comprises the following components (some are obtained through [dell/la
 Name       | Version                 | Description
 -----------|-------------------------|------------------------------
 Ubuntu     | Trusty                  | Operating system
-phpBB      | 3.0.12                  | Forum Software
+phpBB      | 3.0.12                  | Forum software
 MySQL      | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Database
 Apache     | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Web server
 PHP        | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Scripting language
@@ -77,5 +77,4 @@ TBD
 
 ### Image Details
 
-Based on          | 
 Pre-built Image   | [https://registry.hub.docker.com/u/dell/phpbb](https://registry.hub.docker.com/u/dell/phpbb) 
