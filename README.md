@@ -1,5 +1,5 @@
 # docker-phpbb
-phpBB docker container configuration - [phpBB](https://www.phpbb.com/) is an open-source internet forum software written in PHP.
+[phpBB](https://www.phpbb.com/) is an open-source internet forum software.
 
 ## Components
 The stack comprises the following components (some are obtained through [dell/lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base)):
