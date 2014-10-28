@@ -80,7 +80,7 @@ Next, provide the following details (you are free to choose the values):
 
 Unless you have in depth knowledge of phpBB, you may wish to accept the defaults, and proceed through the installation until the final screen, which says "Congratulations!". Click on the login button, and supply the administrator details provided earlier.
 
-### Remove the install Folder
+### Remove the Install Folder
 
 Under construction
 
