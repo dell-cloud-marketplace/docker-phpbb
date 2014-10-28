@@ -1,5 +1,6 @@
 # docker-phpbb
 [phpBB](https://www.phpbb.com/) is open-source internet forum software.
+This is a base Docker image to run a [phpBB](https://www.phpbb.com/) application - phpBB is a popular open-source internet forum application that is highly customisable.
 
 ## Components
 The stack comprises the following components (some are obtained through [dell/lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base)):
@@ -79,9 +80,6 @@ Next, provide the following details (you are free to choose the values):
 * Confirm contact e-mail
 
 Unless you have in depth knowledge of phpBB, you may wish to accept the defaults, and proceed through the installation until the final screen, which says "Congratulations!". Click on the login button, and supply the administrator details provided earlier.
-
-### Remove the **install** Folder
-Under construction
 
 ### Image Details
 
