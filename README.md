@@ -16,16 +16,20 @@ PHP        | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/do
 ## Usage
 
 ### Start the Container
-Start the container, as follows:
+To start your container with:
+
+* A named container ("phpbb")
+* Host port 80 mapped to container port 80 (default http port)
+* Host port 443 mapped to container port 443 (default https port)
+* Host port 3306 mapped to container port 3306 (default mysql port)
+* Data volume (which will survive a restart) for the PHP files
+
+Do:
 
     docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
     --name phpbb dell/phpbb
 
-You need to check the container logs, in order to get the MySQL password:
-
-    docker logs phpbb
-
-You should see an output like the following:
+A new admin user, with all privileges, will be created in MySQL with a random password. To get the password, check the container logs (```docker logs phpbb```). You will see output like the following:
 
     ====================================================================
     You can now connect to this MySQL Server using:
@@ -36,7 +40,11 @@ You should see an output like the following:
     MySQL user 'root' has no password but only allows local connections
     =====================================================================
 
-In this case, **ca1w7dUhnIgI** is the password allocated to the admin user. Copy the value to the clipboard.
+In this case, **ca1w7dUhnIgI** is the password allocated to the admin user.
+
+You can then connect to the admin console...
+
+    mysql -u admin -p ca1w7dUhnIgI --host 127.0.0.1 --port 3306
 
 ### Complete the installation
 
