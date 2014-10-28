@@ -1,5 +1,4 @@
 # docker-phpbb
-[phpBB](https://www.phpbb.com/) is open-source internet forum software.
 This is a base Docker image to run a [phpBB](https://www.phpbb.com/) application - phpBB is a popular open-source internet forum application that is highly customisable.
 
 ## Components
