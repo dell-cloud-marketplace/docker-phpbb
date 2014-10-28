@@ -86,4 +86,6 @@ Under construction
 
 ### Image Details
 
+Based on [dell/docker-lamp](https://github.com/dell-cloud-marketplace/docker-lamp.git)
+
 Pre-built Image   | [https://registry.hub.docker.com/u/dell/phpbb](https://registry.hub.docker.com/u/dell/phpbb) 
