@@ -22,12 +22,10 @@ To start your container with:
 * Host port 80 mapped to container port 80 (default http port)
 * Host port 443 mapped to container port 443 (default https port)
 * Host port 3306 mapped to container port 3306 (default mysql port)
-* Data volume (which will survive a restart) for the PHP files
 
 Do:
 
-    docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
-    --name phpbb dell/phpbb
+    docker run -d -p 80:80 -p 443:443 -p 3306:3306 --name phpbb dell/phpbb
 
 A new admin user, with all privileges, will be created in MySQL with a random password. To get the password, check the container logs (```docker logs phpbb```). You will see output like the following:
 
@@ -46,6 +44,13 @@ You can then connect to the admin console...
 
     mysql -u admin -p ca1w7dUhnIgI --host 127.0.0.1 --port 3306
 
+
+### Advance Example 1
+To start your image with a data volume (which will survive a restart) for the PHP application files, do:
+
+    docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
+    --name phpbb dell/phpbb
+    
 ### Complete the installation
 
 Open a web browser and navigate to either the public DNS or IP address of your instance. For example, if the IP address is **54.75.168.125**, do:
