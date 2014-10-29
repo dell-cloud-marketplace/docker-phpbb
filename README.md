@@ -19,9 +19,9 @@ PHP        | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/do
 To start your container with:
 
 * A named container ("phpbb")
-* Host port 80 mapped to container port 80 (default http port)
-* Host port 443 mapped to container port 443 (default https port)
-* Host port 3306 mapped to container port 3306 (default mysql port)
+* Host port 80 mapped to container port 80 (default HTTP port)
+* Host port 443 mapped to container port 443 (default HTTPS port)
+* Host port 3306 mapped to container port 3306 (default MySQL port)
 
 Do:
 
