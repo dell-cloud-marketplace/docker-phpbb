@@ -63,6 +63,7 @@ You should see the Introduction page. Click on the Install tab. Next, click on "
 
 Complete the following information:
 
+* Database type: **MySQL**
 * Database server hostname or DSN: **localhost**
 * Database name: **phpbb**
 * Database username: **admin**
