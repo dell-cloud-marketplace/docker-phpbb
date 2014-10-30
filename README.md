@@ -92,7 +92,8 @@ Currently (with Docker 1.2), the first step is to install [nsenter](https://gith
 
 ```no-highlight
 apt-get install -y build-essential
-curl https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz | tar -zxf-
+curl https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz \
+| tar -zxf-
 cd util-linux-2.24
 ./configure --without-ncurses
 make nsenter
