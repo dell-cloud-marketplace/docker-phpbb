@@ -1,5 +1,7 @@
 # docker-phpbb
-This is a base Docker image to run a [phpBB](https://www.phpbb.com/) application - phpBB is a popular open-source internet forum application that is highly customisable.
+This is a base Docker image to run [phpBB](https://www.phpbb.com/), a popular open-source internet forum application that is highly customisable.
+
+Please note that, the application requires [post-installation configuration](#post-installation-configuration) via the command line.
 
 ## Components
 The stack comprises the following components (some are obtained through [dell/lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base)):
@@ -25,7 +27,7 @@ To start your container with:
 
 Do:
 
-    docker run -d -p 80:80 -p 443:443 -p 3306:3306 --name phpbb dell/phpbb
+    sudo docker run -d -p 80:80 -p 443:443 -p 3306:3306 --name phpbb dell/phpbb
 
 A new admin user, with all privileges, will be created in MySQL with a random password. To get the password, check the container logs (```docker logs phpbb```). You will see output like the following:
 
@@ -48,7 +50,7 @@ You can then connect to the admin console...
 ### Advance Example 1
 To start your image with a data volume (which will survive a restart) for the PHP application files, do:
 
-    docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
+    sudo docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
     --name phpbb dell/phpbb
     
 ### Complete the installation
@@ -81,9 +83,57 @@ Next, provide the following details (you are free to choose the values):
 
 Unless you have in depth knowledge of phpBB, you may wish to accept the defaults, and proceed through the installation until the final screen, which says "Congratulations!". Click on the login button, and supply the administrator details provided earlier.
 
-### Remove the Install Folder
+<a name="post-installation-configuration"></a>
+### Post-installation Configuration
+After completing the installation process, the **install** folder needs to be removed or renamed. Otherwise, the application will be limited to the administrator.
 
-Under construction
+Currently (with Docker 1.2), the first step is to install [nsenter](https://github.com/jpetazzo/nsenter) on the host. If you are a DCM user, please ssh into the instance. Next, create file **install.sh**, with the following contents:
+
+
+```no-highlight
+apt-get install -y build-essential
+curl https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz | tar -zxf-
+cd util-linux-2.24
+./configure --without-ncurses
+make nsenter
+cp nsenter /usr/local/bin
+```
+
+Next, do:
+
+```no-highlight
+chmod +x install.sh
+sudo ./install.sh
+```
+
+Find the id of the php container via ```sudo docker ps```. The output (truncated to the left of the screen), should look something like this:
+
+```no-highlight
+CONTAINER ID        IMAGE               COMMAND 
+49ad89e9cc57        dell/phpbb:******   "/run.sh"      
+```
+
+Assuming, for example, a container ID of **49ad89e9cc57**, please do:
+
+```no-highlight
+PID=$(sudo docker inspect --format '{{.State.Pid}}' 49ad89e9cc57); \
+sudo nsenter --target $PID --mount --uts --ipc --net --pid
+```
+
+You might get a warning, similar to the following, and a command prompt:
+
+```no-highlight
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+root@49ad89e9cc57:/# 
+```
+
+Finally, rename the install folder:
+
+```no-highlight
+cd /var/www/html/
+mv install _install
+exit
+```
 
 ### Image Details
 
