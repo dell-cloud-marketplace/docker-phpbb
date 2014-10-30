@@ -107,7 +107,7 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-Find the id of the php container via ```sudo docker ps```. The output (truncated to the left of the screen), should look something like this:
+Find the id of the phpBB container via ```sudo docker ps```. The output (truncated to the left of the screen), should look something like this:
 
 ```no-highlight
 CONTAINER ID        IMAGE               COMMAND 
