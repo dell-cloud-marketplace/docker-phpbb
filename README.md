@@ -53,7 +53,7 @@ To start your image with a data volume (which will survive a restart) for the PH
     sudo docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
     --name phpbb dell/phpbb
 
-The PHP application files will be available in folder /app on the host.
+The PHP application files will be available in folder **/app** on the host.
 
 ### Complete the installation
 
