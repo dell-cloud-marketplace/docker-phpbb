@@ -47,12 +47,14 @@ You can then connect to the admin console...
     mysql -u admin -p ca1w7dUhnIgI --host 127.0.0.1 --port 3306
 
 
-### Advance Example 1
+### Advanced Example
 To start your image with a data volume (which will survive a restart) for the PHP application files, do:
 
     sudo docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
     --name phpbb dell/phpbb
-    
+
+The PHP application files will be available in folder /app on the host.
+
 ### Complete the installation
 
 Open a web browser and navigate to either the public DNS or IP address of your instance. For example, if the IP address is **54.75.168.125**, do:
