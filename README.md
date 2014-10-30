@@ -1,5 +1,5 @@
 # docker-phpbb
-This is a base Docker image to run [phpBB](https://www.phpbb.com/), a popular open-source internet forum application.
+This is a Docker image to run [phpBB](https://www.phpbb.com/), a popular open-source internet forum application.
 
 Please note that, the application requires [post-installation configuration](#post-installation-configuration) via the command line.
 
