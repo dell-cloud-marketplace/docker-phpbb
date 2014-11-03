@@ -55,7 +55,7 @@ To start your image with a data volume (which will survive a restart) for the PH
 
 The PHP application files will be available in folder **/app** on the host.
 
-### Complete the installation
+### Complete the Installation
 
 Open a web browser and navigate to either the public DNS or IP address of your instance. For example, if the IP address is **54.75.168.125**, do:
 
@@ -86,7 +86,7 @@ Next, provide the following details (you are free to choose the values):
 Unless you have in depth knowledge of phpBB, you may wish to accept the defaults, and proceed through the installation until the final screen, which says "Congratulations!". Click on the login button, and supply the administrator details provided earlier.
 
 <a name="post-installation-configuration"></a>
-### Post-installation Configuration
+### Post-Installation Configuration
 After completing the installation process, the **install** folder needs to be removed or renamed. Otherwise, the application will be limited to the administrator.
 
 Currently (with Docker 1.2), the first step is to install [nsenter](https://github.com/jpetazzo/nsenter) on the host. If you are a DCM user, please ssh into the instance. Next, create file **install.sh**, with the following contents:
