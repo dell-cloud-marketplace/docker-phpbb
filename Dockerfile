@@ -11,6 +11,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
         imagemagick \
         wget \
         unzip
+        
+# Clean package cache
+RUN apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
 # Add scripts.
 COPY run.sh /run.sh
