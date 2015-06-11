@@ -8,7 +8,7 @@ The stack comprises the following components (some are obtained through [dell/la
 
 Name       | Version                 | Description
 -----------|-------------------------|------------------------------
-phpBB      | 3.0.12                  | Forum software
+phpBB      | 3.1.3                   | Forum software
 Ubuntu     | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base)                  | Operating system
 MySQL      | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Database
 Apache     | see [docker-lamp-base](https://github.com/dell-cloud-marketplace/docker-lamp-base) | Web server
@@ -81,7 +81,6 @@ Next, provide the following details (you are free to choose the values):
 * Administrator password
 * Confirm administrator password
 * Contact e-mail address
-* Confirm contact e-mail
 
 Unless you have in depth knowledge of phpBB, you may wish to accept the defaults, and proceed through the installation until the final screen, which says "Congratulations!". Click on the login button, and supply the administrator details provided earlier.
 
