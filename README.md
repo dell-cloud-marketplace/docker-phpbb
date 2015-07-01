@@ -137,6 +137,14 @@ mv install _install
 exit
 ```
 
+## Reference
+
+### Environmental Variables
+
+Variable   | Default  | Description
+-----------|----------|----------------------------------
+MYSQL_PASS | *random* | Password for MySQL user **admin**
+
 ### Image Details
 
 Pre-built Image   | [https://registry.hub.docker.com/u/dell/phpbb](https://registry.hub.docker.com/u/dell/phpbb) 
