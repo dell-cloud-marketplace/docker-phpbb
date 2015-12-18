@@ -1,4 +1,4 @@
-FROM dell/lamp-base:1.1
+FROM dell/lamp-base:1.2
 MAINTAINER Dell Cloud Market Place <Cloud_Marketplace@dell.com>
 
 # Update existing packages.

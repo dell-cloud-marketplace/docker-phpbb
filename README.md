@@ -51,7 +51,7 @@ You can then connect to the admin console...
 To start your image with a data volume (which will survive a restart) for the PHP application files, do:
 
     sudo docker run -d -p 80:80 -p 443:443 -p 3306:3306 -v /app:/var/www/html \
-    --name phpbb dell/phpbb
+    -e MYSQL_PASS="password" --name phpbb dell/phpbb
 
 The PHP application files will be available in folder **/app** on the host.
 
@@ -136,6 +136,14 @@ cd /var/www/html/
 mv install _install
 exit
 ```
+
+## Reference
+
+### Environmental Variables
+
+Variable   | Default  | Description
+-----------|----------|----------------------------------
+MYSQL_PASS | *random* | Password for MySQL user **admin**
 
 ### Image Details
 
