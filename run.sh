@@ -14,7 +14,7 @@ fi
 
 APPLICATION_HOME="/var/www/html"
 
-if [[ ! -d $APPLICATON_HOME ]]; then
+if [[ ! -d $APPLICATION_HOME ]]; then
    echo "=> Copying application files"
    cp -r phpBB3/* $APPLICATION_HOME
    cd $APPLICATION_HOME
